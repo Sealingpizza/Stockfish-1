@@ -89,14 +89,14 @@ def boardToArray(board):
     
     pieces = boardString.split(" ", 1)[0]
     rows = pieces.split("/")
-    for i in rows:
+    for row in rows:
         finalRow = []
-        for j in i:
-            if j.isdigit():
-                for i in range(0, int(j)):
+        for piece in row:
+            if piece.isdigit():
+                for row in range(0, int(piece)):
                     finalRow.append(0)
             else:
-                finalRow.append(pieceCharToInt[j])
+                finalRow.append(pieceCharToInt[piece])
         boardArray = boardArray + (finalRow)
     return (boardArray)
     
